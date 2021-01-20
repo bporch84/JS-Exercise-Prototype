@@ -89,6 +89,9 @@ function Airplane(name) {
   Car.prototype.drive = function(distance) {
     this.odometer = this.odometer + distance;
     this.tank = this.tank - (distance/this.milesPerGallon)
+    if(this.tank === 0){
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
   }
   
   
@@ -113,10 +116,10 @@ function Airplane(name) {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Implicit - This is when "this" works directly within the object it was created in, so "this" = object name.
+    2. Explicit - We deliberately set "this" to something
+    3. Window/Global - "This" will show us what's in the window scope. If this pops up when it's not what we intended, then we should check to see where we bound "this" because it's probably not correct.
+    4. New - We can use this to create a new object and use the info from the class in that new object.
   */
   
   
